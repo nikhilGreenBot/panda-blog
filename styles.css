@@ -80,6 +80,16 @@ nav {
     font-weight: 300;
 }
 
+.profile-photo {
+    display: inline-block;
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: 1.25rem;
+    border: 4px solid rgba(0,0,0,0.08);
+}
+
 /* Content */
 .content {
     margin-bottom: 3rem;
