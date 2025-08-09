@@ -50,6 +50,17 @@ nav {
     color: #000;
 }
 
+/* Slash-style nav tags */
+.nav-links a.nav-tag {
+    color: #999;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    letter-spacing: -0.01em;
+}
+
+.nav-links a.nav-tag:hover {
+    color: #000;
+}
+
 /* Hero Section */
 .hero {
     text-align: center;
@@ -138,6 +149,14 @@ nav {
 
 .read-more:hover {
     color: #000;
+}
+
+.post-footer .read-more {
+    border-bottom: 1px solid transparent;
+}
+
+.post-footer .read-more:hover {
+    border-bottom-color: currentColor;
 }
 
 /* Pagination */
@@ -246,6 +265,14 @@ footer {
     
     .nav-links a:hover,
     .nav-links a.active {
+        color: #fff;
+    }
+
+    .nav-links a.nav-tag {
+        color: #aaa;
+    }
+
+    .nav-links a.nav-tag:hover {
         color: #fff;
     }
     

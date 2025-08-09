@@ -1,6 +1,6 @@
-# Panda's Blog 🐼
+# Panda Blog — Nikhil Bastikar
 
-A clean, minimal blog website inspired by Chris Hannah's design. Built with HTML, CSS, and JavaScript.
+A clean, minimal personal blog inspired by Chris Hannah's design. Built with HTML, CSS, and JavaScript.
 
 ## Features
 
