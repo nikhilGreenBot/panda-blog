@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Photography — nikhilGreenBot</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .page-enter { opacity: 0; }
+    .page-enter-active { opacity: 1; transition: opacity 400ms ease; }
+    .gallery {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+    .gallery img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed; inset: 0; display: none; place-items: center;
+      background: rgba(0,0,0,0.8); z-index: 1000;
+    }
+    .lightbox.open { display: grid; }
+    .lightbox img { max-width: 92vw; max-height: 88vh; border-radius: 8px; }
+    .lightbox .close {
+      position: absolute; top: 16px; right: 20px; font-size: 28px;
+      color: #fff; cursor: pointer; line-height: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container page-enter" id="page">
+    <header>
+      <nav>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="index.html#essays">Essays</a>
+          <a href="index.html#micro">Micro</a>
+          <a href="photography.html" class="active">Photography</a>
+          <a href="index.html#archive">Archive</a>
+          <a href="index.html#about" class="nav-tag">&lt;/about&gt;</a>
+          <a href="index.html#contact" class="nav-tag">&lt;/contact&gt;</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="hero">
+        <p class="tagline">A few animals I adore</p>
+      </div>
+
+      <section class="gallery">
+        <img src="assets/animal-1-thumb.jpg" data-full="assets/animal-1.jpg" alt="Animal 1" />
+        <img src="assets/animal-2-thumb.jpg" data-full="assets/animal-2.jpg" alt="Animal 2" />
+      </section>
+    </main>
+  </div>
+
+  <div class="lightbox" id="lightbox">
+    <span class="close" id="lightboxClose">×</span>
+    <img id="lightboxImg" alt="Preview" />
+  </div>
+
+  <script>
+    // Page fade-in
+    const page = document.getElementById('page');
+    requestAnimationFrame(() => page.classList.add('page-enter-active'));
+
+    // Lightbox
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightboxImg');
+    const lbClose = document.getElementById('lightboxClose');
+    document.querySelectorAll('.gallery img').forEach(img => {
+      img.addEventListener('click', () => {
+        lbImg.src = img.dataset.full;
+        lb.classList.add('open');
+      });
+    });
+    function closeLb(){ lb.classList.remove('open'); lbImg.src = ''; }
+    lb.addEventListener('click', (e) => { if (e.target === lb) closeLb(); });
+    lbClose.addEventListener('click', closeLb);
+    document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeLb(); });
+  </script>
+</body>
+</html>
+
+
