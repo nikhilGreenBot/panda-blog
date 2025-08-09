@@ -1,6 +1,4 @@
-# Panda Blog — Nikhil Bastikar
-
-A clean, minimal personal blog inspired by Chris Hannah's design. Built with HTML, CSS, and JavaScript.
+Hi I am nikhilGreenBot — I like cats, ramen, and photography in no particular order. Work in progress.
 
 ## Features
 
