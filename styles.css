@@ -308,16 +308,28 @@ nav {
     border-color: rgba(24, 119, 242, 0.5);
 }
 
+.github-link {
+    color: #24292e !important;
+    background: rgba(36, 41, 46, 0.1) !important;
+    border-color: rgba(36, 41, 46, 0.3) !important;
+}
+
 .github-link:hover {
-    color: #333;
-    background: rgba(51, 51, 51, 0.1);
-    border-color: rgba(51, 51, 51, 0.3);
+    color: #1a1e22;
+    background: rgba(36, 41, 46, 0.2);
+    border-color: rgba(36, 41, 46, 0.5);
+}
+
+.email-link {
+    color: #d32f2f !important;
+    background: rgba(211, 47, 47, 0.1) !important;
+    border-color: rgba(211, 47, 47, 0.3) !important;
 }
 
 .email-link:hover {
-    color: #4CAF50;
-    background: rgba(76, 175, 80, 0.1);
-    border-color: rgba(76, 175, 80, 0.3);
+    color: #b71c1c;
+    background: rgba(211, 47, 47, 0.2);
+    border-color: rgba(211, 47, 47, 0.5);
 }
 
 .social-link svg {
