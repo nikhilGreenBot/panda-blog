@@ -16,24 +16,204 @@
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 1rem;
     }
-    .gallery img {
+    
+    .photo-item {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    .photo-item:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    }
+    
+    .photo-item img {
       width: 100%;
       height: 260px;
       object-fit: cover;
-      border-radius: 12px;
-      cursor: pointer;
+      transition: all 0.4s ease;
+    }
+    
+    .photo-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+      padding: 1rem;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+    
+    .photo-item:hover .photo-overlay {
+      transform: translateY(0);
+    }
+    
+    .photo-title {
+      color: white;
+      font-weight: 600;
+      font-size: 1.1rem;
     }
 
-    /* Lightbox */
+    /* Nostalgic Lightbox - Newspaper Style */
     .lightbox {
-      position: fixed; inset: 0; display: none; place-items: center;
-      background: rgba(0,0,0,0.8); z-index: 1000;
+      position: fixed; 
+      inset: 0; 
+      display: none; 
+      background: rgba(0,0,0,0.95); 
+      z-index: 1000;
+      overflow-y: auto;
+      animation: fadeInNostalgic 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    .lightbox.open { display: grid; }
-    .lightbox img { max-width: 92vw; max-height: 88vh; border-radius: 8px; }
+    
+    .lightbox.open { 
+      display: block; 
+    }
+    
+    .lightbox-content {
+      max-width: 100vw;
+      margin: 0 auto;
+      background: #fff;
+      min-height: 100vh;
+      position: relative;
+      animation: slideUpNostalgic 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .photo-container {
+      width: 100%;
+      position: relative;
+      background: #f8f8f8;
+      padding: 2rem 0;
+    }
+    
+    .lightbox img { 
+      width: 100%;
+      height: auto;
+      max-height: 80vh;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto;
+      animation: zoomInNostalgic 1s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .photo-info {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+      background: #fff;
+    }
+    
+    .photo-title-expanded {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #2c3e50;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    
+    .photo-description {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: #555;
+      margin-bottom: 2rem;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    
+    .photo-meta {
+      border-top: 1px solid #e5e5e5;
+      padding-top: 1rem;
+    }
+    
+    .photo-date {
+      color: #888;
+      font-size: 0.9rem;
+      font-style: italic;
+    }
+    
     .lightbox .close {
-      position: absolute; top: 16px; right: 20px; font-size: 28px;
-      color: #fff; cursor: pointer; line-height: 1;
+      position: fixed; 
+      top: 20px; 
+      right: 30px; 
+      font-size: 32px;
+      color: #fff; 
+      cursor: pointer; 
+      line-height: 1;
+      background: rgba(0, 0, 0, 0.5);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      z-index: 1001;
+    }
+    
+    .lightbox .close:hover {
+      background: rgba(0, 0, 0, 0.8);
+      transform: scale(1.1);
+    }
+    
+    /* Nostalgic Animations */
+    @keyframes fadeInNostalgic {
+      from { 
+        opacity: 0; 
+        backdrop-filter: blur(0px);
+      }
+      to { 
+        opacity: 1; 
+        backdrop-filter: blur(10px);
+      }
+    }
+    
+    @keyframes slideUpNostalgic {
+      from { 
+        transform: translateY(100px); 
+        opacity: 0;
+      }
+      to { 
+        transform: translateY(0); 
+        opacity: 1;
+      }
+    }
+    
+    @keyframes zoomInNostalgic {
+      from { 
+        transform: scale(0.8); 
+        opacity: 0;
+      }
+      to { 
+        transform: scale(1); 
+        opacity: 1;
+      }
+    }
+    
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .photo-title-expanded {
+        font-size: 2rem;
+      }
+      
+      .photo-description {
+        font-size: 1.1rem;
+      }
+      
+      .photo-info {
+        padding: 2rem 1rem;
+      }
+      
+      .lightbox .close {
+        top: 15px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        font-size: 24px;
+      }
     }
   </style>
 </head>
@@ -57,15 +237,36 @@
       </div>
 
       <section class="gallery">
-        <img src="assets/animal-1-thumb.jpg" data-full="assets/animal-1.jpg" alt="Animal 1" />
-        <img src="assets/animal-2-thumb.jpg" data-full="assets/animal-2.jpg" alt="Animal 2" />
+        <div class="photo-item" data-full="assets/animal-1.jpg" data-title="Majestic Alligator" data-description="A close-up view of an alligator's textured skin and piercing eyes, captured in its natural habitat. The rough, scaly surface tells the story of survival in the wild.">
+          <img src="assets/animal-1-thumb.jpg" alt="Alligator close-up" />
+          <div class="photo-overlay">
+            <span class="photo-title">Alligator Portrait</span>
+          </div>
+        </div>
+        <div class="photo-item" data-full="assets/animal-2.jpg" data-title="Curious Orangutan" data-description="A young orangutan exploring its environment, showing the intelligence and curiosity that makes these primates so fascinating. The shaggy fur and expressive eyes reveal the personality within.">
+          <img src="assets/animal-2-thumb.jpg" alt="Orangutan sitting" />
+          <div class="photo-overlay">
+            <span class="photo-title">Orangutan Moment</span>
+          </div>
+        </div>
       </section>
     </main>
   </div>
 
   <div class="lightbox" id="lightbox">
-    <span class="close" id="lightboxClose">×</span>
-    <img id="lightboxImg" alt="Preview" />
+    <div class="lightbox-content">
+      <span class="close" id="lightboxClose">×</span>
+      <div class="photo-container">
+        <img id="lightboxImg" alt="Preview" />
+      </div>
+      <div class="photo-info">
+        <h2 id="photoTitle" class="photo-title-expanded"></h2>
+        <p id="photoDescription" class="photo-description"></p>
+        <div class="photo-meta">
+          <span class="photo-date">Photographed by Nikhil Bastikar</span>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script>
@@ -73,20 +274,74 @@
     const page = document.getElementById('page');
     requestAnimationFrame(() => page.classList.add('page-enter-active'));
 
-    // Lightbox
+    // Nostalgic Lightbox with Newspaper Style
     const lb = document.getElementById('lightbox');
     const lbImg = document.getElementById('lightboxImg');
+    const lbTitle = document.getElementById('photoTitle');
+    const lbDescription = document.getElementById('photoDescription');
     const lbClose = document.getElementById('lightboxClose');
-    document.querySelectorAll('.gallery img').forEach(img => {
-      img.addEventListener('click', () => {
-        lbImg.src = img.dataset.full;
-        lb.classList.add('open');
+    
+    // Add nostalgic click animation to photo items
+    document.querySelectorAll('.photo-item').forEach(item => {
+      item.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        // Nostalgic click animation
+        item.style.transform = 'scale(0.95)';
+        item.style.transition = 'transform 0.2s ease';
+        
+        setTimeout(() => {
+          // Load photo data
+          lbImg.src = item.dataset.full;
+          lbTitle.textContent = item.dataset.title;
+          lbDescription.textContent = item.dataset.description;
+          
+          // Show lightbox with nostalgic animation
+          lb.classList.add('open');
+          document.body.style.overflow = 'hidden';
+          
+          // Reset item animation
+          item.style.transform = '';
+        }, 200);
       });
     });
-    function closeLb(){ lb.classList.remove('open'); lbImg.src = ''; }
-    lb.addEventListener('click', (e) => { if (e.target === lb) closeLb(); });
+    
+    // Close lightbox with nostalgic animation
+    function closeLb(){ 
+      lb.style.animation = 'fadeOutNostalgic 0.4s ease forwards';
+      setTimeout(() => {
+        lb.classList.remove('open');
+        lb.style.animation = '';
+        document.body.style.overflow = '';
+        lbImg.src = '';
+        lbTitle.textContent = '';
+        lbDescription.textContent = '';
+      }, 400);
+    }
+    
+    lb.addEventListener('click', (e) => { 
+      if (e.target === lb || e.target.classList.contains('lightbox-content')) closeLb(); 
+    });
     lbClose.addEventListener('click', closeLb);
-    document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeLb(); });
+    document.addEventListener('keydown', (e) => { 
+      if (e.key === 'Escape') closeLb(); 
+    });
+    
+    // Add fade out animation
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes fadeOutNostalgic {
+        from { 
+          opacity: 1; 
+          backdrop-filter: blur(10px);
+        }
+        to { 
+          opacity: 0; 
+          backdrop-filter: blur(0px);
+        }
+      }
+    `;
+    document.head.appendChild(style);
   </script>
 </body>
 </html>
