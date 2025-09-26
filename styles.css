@@ -11,6 +11,7 @@ body {
     color: #333;
     background-color: #fff;
     font-size: 16px;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><defs><filter id="shadow" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="rgba(0,0,0,0.3)"/></filter></defs><g filter="url(%23shadow)"><path d="M16 2C8.268 2 2 8.268 2 16s6.268 14 14 14 14-6.268 14-14S23.732 2 16 2zm0 2c6.627 0 12 5.373 12 12s-5.373 12-12 12S4 22.627 4 16 9.373 4 16 4z" fill="%234CAF50"/><path d="M12 10c-1.105 0-2 .895-2 2s.895 2 2 2 2-.895 2-2-.895-2-2-2zm8 0c-1.105 0-2 .895-2 2s.895 2 2 2 2-.895 2-2-.895-2-2-2z" fill="%234CAF50"/><path d="M16 18c-2.209 0-4-1.791-4-4h8c0 2.209-1.791 4-4 4z" fill="%234CAF50"/></g></svg>'), auto;
 }
 
 .container {
@@ -78,22 +79,23 @@ nav {
     border: 1px solid transparent;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     letter-spacing: -0.01em;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><defs><filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><g filter="url(%23glow)"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="%234CAF50"/></g></svg>'), pointer;
 }
 
 .nav-links a:hover {
-    color: #e74c3c;
-    background: rgba(231, 76, 60, 0.08);
-    border-color: rgba(231, 76, 60, 0.2);
+    color: #4CAF50;
+    background: rgba(76, 175, 80, 0.08);
+    border-color: rgba(76, 175, 80, 0.2);
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.15);
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.15);
 }
 
 .nav-links a.active {
-    color: #e74c3c;
-    background: rgba(231, 76, 60, 0.1);
-    border-color: rgba(231, 76, 60, 0.3);
+    color: #4CAF50;
+    background: rgba(76, 175, 80, 0.1);
+    border-color: rgba(76, 175, 80, 0.3);
     font-weight: 600;
-    box-shadow: 0 2px 8px rgba(231, 76, 60, 0.2);
+    box-shadow: 0 2px 8px rgba(76, 175, 80, 0.2);
 }
 
 /* Professional nav tags - same styling as regular links */
@@ -108,11 +110,11 @@ nav {
 }
 
 .nav-links a.nav-tag:hover {
-    color: #e74c3c;
-    background: rgba(231, 76, 60, 0.08);
-    border-color: rgba(231, 76, 60, 0.2);
+    color: #4CAF50;
+    background: rgba(76, 175, 80, 0.08);
+    border-color: rgba(76, 175, 80, 0.2);
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.15);
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.15);
 }
 
 /* Hero Section */
@@ -180,6 +182,7 @@ nav {
     text-decoration: none;
     color: #000;
     transition: color 0.2s ease;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><defs><filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><g filter="url(%23glow)"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="%234CAF50"/></g></svg>'), pointer;
 }
 
 .post h2 a:hover {
@@ -270,6 +273,7 @@ footer {
     text-decoration: none;
     font-size: 0.9rem;
     transition: color 0.2s ease;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><defs><filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><g filter="url(%23glow)"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="%234CAF50"/></g></svg>'), pointer;
 }
 
 .footer-links a:hover {
@@ -363,15 +367,15 @@ footer {
     }
     
     .nav-links a:hover {
-        color: #ff6b6b;
-        background: rgba(255, 107, 107, 0.1);
-        border-color: rgba(255, 107, 107, 0.3);
+        color: #66BB6A;
+        background: rgba(102, 187, 106, 0.1);
+        border-color: rgba(102, 187, 106, 0.3);
     }
     
     .nav-links a.active {
-        color: #ff6b6b;
-        background: rgba(255, 107, 107, 0.15);
-        border-color: rgba(255, 107, 107, 0.4);
+        color: #66BB6A;
+        background: rgba(102, 187, 106, 0.15);
+        border-color: rgba(102, 187, 106, 0.4);
     }
 
     .nav-links a.nav-tag {
@@ -381,9 +385,9 @@ footer {
     }
 
     .nav-links a.nav-tag:hover {
-        color: #ff6b6b;
-        background: rgba(255, 107, 107, 0.1);
-        border-color: rgba(255, 107, 107, 0.3);
+        color: #66BB6A;
+        background: rgba(102, 187, 106, 0.1);
+        border-color: rgba(102, 187, 106, 0.3);
     }
     
     .hero h1 {
