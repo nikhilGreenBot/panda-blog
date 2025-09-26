@@ -122,8 +122,12 @@
       border: 1px solid rgba(255, 255, 255, 0.2);
       box-shadow: 0 8px 32px rgba(59, 130, 246, 0.1);
       min-height: 100vh;
+      max-height: 100vh;
+      overflow-y: auto;
       position: relative;
       z-index: 1;
+      display: flex;
+      flex-direction: column;
     }
     
     .photo-container {
@@ -136,13 +140,14 @@
       backdrop-filter: blur(5px);
       -webkit-backdrop-filter: blur(5px);
       border: 1px solid rgba(255, 255, 255, 0.3);
-      padding: 2rem 0;
+      padding: 1rem 0;
+      flex: 0 0 auto;
     }
     
     .lightbox img {
       width: 100%;
       height: auto;
-      max-height: 80vh;
+      max-height: 60vh;
       object-fit: contain;
       display: block;
       margin: 0 auto;
@@ -152,24 +157,26 @@
     .photo-info {
       max-width: 800px;
       margin: 0 auto;
-      padding: 3rem 2rem;
+      padding: 2rem 2rem;
       background: #fff;
+      flex: 1;
+      overflow-y: auto;
     }
     
     .photo-title-expanded {
-      font-size: 2.5rem;
+      font-size: 2rem;
       font-weight: 700;
       color: #2c3e50;
-      margin-bottom: 1rem;
+      margin-bottom: 0.8rem;
       line-height: 1.2;
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
     
     .photo-description {
-      font-size: 1.2rem;
-      line-height: 1.6;
+      font-size: 1.1rem;
+      line-height: 1.5;
       color: #555;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
     
@@ -233,16 +240,20 @@
         right: 15px;
       }
       
+      .lightbox img {
+        max-height: 50vh;
+      }
+      
       .photo-title-expanded {
-        font-size: 2rem;
+        font-size: 1.5rem;
       }
       
       .photo-description {
-        font-size: 1.1rem;
+        font-size: 1rem;
       }
       
       .photo-info {
-        padding: 2rem 1rem;
+        padding: 1.5rem 1rem;
       }
       
       .close {
@@ -251,6 +262,24 @@
         width: 40px;
         height: 40px;
         font-size: 24px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .lightbox img {
+        max-height: 40vh;
+      }
+      
+      .photo-title-expanded {
+        font-size: 1.3rem;
+      }
+      
+      .photo-description {
+        font-size: 0.95rem;
+      }
+      
+      .photo-info {
+        padding: 1rem 0.8rem;
       }
     }
     
